@@ -15,4 +15,6 @@ assert(fibo(3) == 2)
 assert(fibo(4) == 3)
 assert(fibo(5) == 5)
 
+print("25 = \(fibo(25))")
+// print("50 = \(fibo(50))") // -> これは計算量が爆発する
 
