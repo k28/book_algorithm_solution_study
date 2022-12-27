@@ -1,7 +1,7 @@
 import Foundation
 
 /*
-    ユークリッドの互助法(Swiftバージョン)
+    ユークリッドの互除法(Swiftバージョン)
 */
 
 func GCD(_ m: Int, _ n: Int) -> Int {

@@ -4,7 +4,7 @@
 require '../common/ruby/assert.rb'
 
 #
-# ユークリッドの互助法 (Euclidean Algolithm)
+# ユークリッドの互除法 (Euclidean Algolithm)
 #
 
 def GCD(m, n)
