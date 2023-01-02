@@ -28,5 +28,9 @@ Common::Assert.equal(true,  func(list.length(), 14, list))
 Common::Assert.equal(true,  func(list.length(), 16, list))
 Common::Assert.equal(false, func(list.length(), 15, list))
 
-pp "ok"
+# 計算に数秒かかる O(2^N)の限界
+# list = [3, 2, 6, 5, 31, 22, 17, 34, 2, 135, 7, 2, 6, 21, 56, 73, 2, 13, 59, 23, 11, 12, 13, 14, 15, 16, 17]
+# Common::Assert.equal(false, func(list.length(), 777, list))
+
+pp "ok5"
 
