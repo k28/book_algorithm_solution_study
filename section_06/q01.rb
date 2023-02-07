@@ -6,19 +6,19 @@
 #
 
 def lower_bound(list, key)
-  left = 0
+  left = -1
   right = list.size
 
-  while (right - left) > 1
+  while left + 1 < right
     mid = left + ((right - left) / 2)
-    if list[mid] > key
+    if list[mid] >= key
       right = mid
     else
       left = mid
     end
   end
 
-  left
+  right
 end
 
 # __main__
