@@ -44,7 +44,6 @@ end
 l = gets.split(" ").each.map {|x| x.to_i }
 N = l[0]
 M = l[1]
-
 a = [0]
 N.times do
   a.push(gets.to_i)
@@ -68,8 +67,7 @@ max_point = 0
 (0...s.size).each do |i|
   expect = M - s[i]
   v = upper_bound(s, expect)
-  next if v >= s.size
-  v -= 1 if s[v] > expect
+  v -= 1
   next if v < 0
 
   point = s[i] + s[v]
