@@ -7,4 +7,7 @@
 | 6.4  | ペア和を最適化する(lower_boundを使う)             |
 | 6.5  | 射撃王                                            |
 
+bit.rb : Binary Indexed Tree
+swap_count.rb : 転倒数を計算する問題
+
 
