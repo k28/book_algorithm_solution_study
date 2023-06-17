@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# グラフ探索基本
+# グラフデータの読み込み
 #
 
 require 'stringio'
