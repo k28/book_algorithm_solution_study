@@ -22,8 +22,8 @@ def search(graph, s)
 
   # todoが空になるまで探索を行う
   while !todo.empty? do
-    v = todo.shift  # キューとして使う場合 (深さ優先探索)
-    # v = todo.pop  # スタックとして使う場合 (幅優先探索)
+    v = todo.shift  # キューとして使う場合 (幅優先探索)
+    # v = todo.pop  # スタックとして使う場合 (深さ優先探索)
 
     # vから辿れる頂点を全て調べる
     list = graph[v]
