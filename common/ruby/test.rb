@@ -3,7 +3,7 @@
 
 require './assert.rb'
 require './list.rb'
-require './min_heap.rb'
+require './priority_queue.rb'
 
 Common::Assert.equal(0, Common::List.lower_bound([2,2,5,5,9], 2))
 Common::Assert.equal(2, Common::List.lower_bound([2,2,5,5,9], 4))
