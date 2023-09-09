@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 # -*- coding: utf-8 -*-
 require 'stringio'
-require '../common/ruby/priority_queue.rb'
 
 #
 # ダイクストラ法 : O(|V|^2) の実装
@@ -62,32 +61,28 @@ M.times do
 end
 
 # ダイクストラ法
+used = Array.new(N, false)
 dist = Array.new(N, INF)
 dist[s] = 0
-
-# (d[v], v)のペアを要素としたヒープを作成する
-# 小さい順に返すように指定します
-que = Common::PriorityQueue.new([], lambda {|x, y| x[0] <= y[0]})
-que.push([dist[s], s])
-
-# ダイクストラ法の反復を開始
-while !que.empty?
-  # v: 使用済みでない頂点のうち、d[v]が最小の頂点
-  # d: vに対するキー値
-  v = que.top()[1]
-  d = que.top()[0]
-  que.pop()
-
-  # d > dist[v] は(d, v) がゴミであることを意味します
-  next if d > dist[v]
-
-  # 頂点vを始点とした各辺を緩和
-  G[v].each do |e|
-    if (chmin(dist, e.to, dist[v] + e.w))
-      # 更新があるならヒープに新しく挿入します
-      que.push([dist[e.to], e.to])
+N.times do |iter|
+  # 使用済みでない頂点のうち、dist値が最小の頂点を探す
+  min_dist = INF
+  min_v = -1
+  N.times do |v|
+    if !used[v] and dist[v] < min_dist
+      min_dist = dist[v]
+      min_v = v
     end
   end
+
+  # もしそのような頂点が見つからなければ終了する
+  break if min_v == -1
+
+  # min_v を始点とした各辺を緩和する
+  G[min_v].each do |e|
+    chmin(dist, e.to, dist[min_v] + e.w)
+  end
+  used[min_v] = true; # min_v を「使用済み」とする
 end
 
 # 結果出力
